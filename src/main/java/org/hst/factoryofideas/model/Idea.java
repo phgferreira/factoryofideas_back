@@ -4,19 +4,19 @@ public class Idea {
 
 	private String name;
 	
-	private String sujestion;
+	private String suggestion;
 	
 	private String sector;
 
-	public Idea(String name, String sujestion, String sector) {
+	public Idea(String name, String suggestion, String sector) {
 		this.name = name;
-		this.sujestion = sujestion;
+		this.suggestion = suggestion;
 		this.sector = sector;
 	}
 
 	@Override
 	public String toString() {
-		return "Idea [name=" + name + ", sujestion=" + sujestion + ", sector=" + sector + "]";
+		return "Idea [name=" + name + ", suggestion=" + suggestion + ", sector=" + sector + "]";
 	}
 
 	public String getName() {
@@ -27,12 +27,12 @@ public class Idea {
 		this.name = name;
 	}
 
-	public String getSujestion() {
-		return sujestion;
+	public String getSuggestion() {
+		return suggestion;
 	}
 
-	public void setSujestion(String sujestion) {
-		this.sujestion = sujestion;
+	public void setSuggestion(String suggestion) {
+		this.suggestion = suggestion;
 	}
 
 	public String getSector() {
