@@ -3,15 +3,17 @@ package org.hst.factoryofideas.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hst.factoryofideas.model.Sector;
+
 public class IdeaRepository {
 
-	private static List<String> sectors = new ArrayList<String>();
+	private static List<Sector> sectors = new ArrayList<Sector>();
 	
-	public static List<String> getSectors() {
+	public static List<Sector> getSectors() {
 		return sectors;
 	}
 
-	public static void setSectors(List<String> s) {
-		sectors = s;
+	public static void setSectors(List<Sector> newSector) {
+		sectors = newSector;
 	}
 }

@@ -6,17 +6,11 @@ public class Idea {
 	
 	private String suggestion;
 	
-	private String sector;
-
-	public Idea(String name, String suggestion, String sector) {
-		this.name = name;
-		this.suggestion = suggestion;
-		this.sector = sector;
-	}
+	private Sector sector;
 
 	@Override
 	public String toString() {
-		return "Idea [name=" + name + ", suggestion=" + suggestion + ", sector=" + sector + "]";
+		return "Idea [name=" + name + ", suggestion=" + suggestion + ", sector=" + sector.toString() + "]";
 	}
 
 	public String getName() {
@@ -35,11 +29,13 @@ public class Idea {
 		this.suggestion = suggestion;
 	}
 
-	public String getSector() {
+	public Sector getSector() {
 		return sector;
 	}
 
-	public void setSector(String sector) {
+	public void setSector(Sector sector) {
 		this.sector = sector;
 	}
+	
+	
 }

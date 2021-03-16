@@ -3,6 +3,7 @@ package org.hst.factoryofideas;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hst.factoryofideas.model.Sector;
 import org.hst.factoryofideas.repository.IdeaRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,14 +18,39 @@ public class FactoryofideasApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		List<String> sectors = new ArrayList<String>();
-		sectors.add("Tecnologia da Informação");
-		sectors.add("Controle de Infecção");
-		sectors.add("Nutrição");
-		sectors.add("Gestão da Qualidade");
-		sectors.add("Internação de Convênios");
-		sectors.add("Internação do SUS");
 		
+		// Inicia as variávies
+		List<String> responsible = new ArrayList<String>();
+		Sector sector = null;
+		List<Sector> sectors = new ArrayList<Sector>();
+		
+		// Preenche com os devidos valores
+		responsible = new ArrayList<String>();
+		responsible.add("max.grotz@hst.org.br");
+		sector = new Sector(1, "Tecnologia da Informação", responsible);
+		sectors.add(sector);
+
+		responsible = new ArrayList<String>();
+		responsible.add("max.grotz@hst.org.br");
+		sector = new Sector(2, "Controle de Infecção", responsible);
+		sectors.add(sector);
+		
+		responsible = new ArrayList<String>();
+		responsible.add("max.grotz@hst.org.br");
+		sector = new Sector(3, "Nutrição", responsible);
+		sectors.add(sector);
+
+		responsible = new ArrayList<String>();
+		responsible.add("max.grotz@hst.org.br");
+		sector = new Sector(4, "Gestão da Qualidade", responsible);
+		sectors.add(sector);
+
+		responsible = new ArrayList<String>();
+		responsible.add("max.grotz@hst.org.br");
+		sector = new Sector(5, "Contas a Receber", responsible);
+		sectors.add(sector);
+		
+		// Insere todos esses dados no repositório
 		IdeaRepository.setSectors(sectors);
 	}
 
