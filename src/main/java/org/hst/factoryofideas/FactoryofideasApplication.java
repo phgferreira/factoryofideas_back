@@ -53,5 +53,5 @@ public class FactoryofideasApplication implements CommandLineRunner {
 		// Insere todos esses dados no repositório
 		SectorRepository.setSectors(sectors);
 	}
-
+	
 }
