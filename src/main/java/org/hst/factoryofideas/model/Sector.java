@@ -16,16 +16,20 @@ public class Sector implements Serializable {
 	
 	private List<String> responsible;
 	
+	@Override
+	public String toString() {
+		return "Sector [id=" + id + ", name=" + name + ", responsible=" + responsible + "]";
+	}
+	
+	public Sector() {
+		
+	}
+
 	public Sector(Integer id, String name, List<String> responsible) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.responsible = responsible;
-	}
-
-	@Override
-	public String toString() {
-		return "Sector [id=" + id + ", name=" + name + ", responsible=" + responsible + "]";
 	}
 
 	public Integer getId() {

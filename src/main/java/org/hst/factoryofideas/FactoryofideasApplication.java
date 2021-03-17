@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hst.factoryofideas.model.Sector;
-import org.hst.factoryofideas.repository.IdeaRepository;
+import org.hst.factoryofideas.repository.SectorRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -51,7 +51,7 @@ public class FactoryofideasApplication implements CommandLineRunner {
 		sectors.add(sector);
 		
 		// Insere todos esses dados no repositório
-		IdeaRepository.setSectors(sectors);
+		SectorRepository.setSectors(sectors);
 	}
 
 }

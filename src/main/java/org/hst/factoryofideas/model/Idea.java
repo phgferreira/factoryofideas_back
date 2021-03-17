@@ -19,6 +19,10 @@ public class Idea implements Serializable {
 	public String toString() {
 		return "Idea [name=" + name + ", suggestion=" + suggestion + ", sector=" + sector.toString() + "]";
 	}
+	
+	public Idea() {
+		
+	}
 
 	public String getName() {
 		return name;
