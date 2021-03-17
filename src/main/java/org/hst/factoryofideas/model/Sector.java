@@ -1,8 +1,14 @@
 package org.hst.factoryofideas.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Sector {
+public class Sector implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2757895643165404311L;
 
 	private Integer id;
 	

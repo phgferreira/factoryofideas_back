@@ -1,6 +1,13 @@
 package org.hst.factoryofideas.model;
 
-public class Idea {
+import java.io.Serializable;
+
+public class Idea implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8603051633890314515L;
 
 	private String name;
 	

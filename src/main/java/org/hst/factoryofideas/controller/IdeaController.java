@@ -6,6 +6,7 @@ import java.util.List;
 import org.hst.factoryofideas.model.Idea;
 import org.hst.factoryofideas.model.Sector;
 import org.hst.factoryofideas.repository.IdeaRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,8 +29,9 @@ public class IdeaController {
 	}
 	
 	@PostMapping(value = "/sendMail")
-	private String sendMail(@RequestBody Idea idea) {
-		System.out.println(idea.toString());
-		return "Success";
+	private ResponseEntity<?> sendMail(@RequestBody Idea idea) {
+		System.out.println("Success receive: " + idea.toString());
+		return ResponseEntity.ok(idea);
 	}
+	
 }
