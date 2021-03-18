@@ -17,11 +17,28 @@ public class EmailService {
 	private static String format(Idea idea) {
 		StringBuilder builder = new StringBuilder();
 		
+		builder.append("<head>");
+			builder.append("<style>");
+				builder.append("h3 {");
+					builder.append("text-align: center;");
+				builder.append("}");
+				builder.append("header {");
+					builder.append("margin-left: auto;");
+					builder.append("margin-rightt: auto;");
+					builder.append("width: 100%;");
+					builder.append("max-width: 600px;");
+					builder.append("border: solid;");
+				builder.append("}");
+			builder.append("</style>");
+		builder.append("</head>");
 		builder.append("<body>");
-			builder.append("<h3>Central de Ideias</h3>");
-			builder.append("<p>Nome: " + (idea.getName() != null ? idea.getName() : "Anônimo") + "</p>");
-			builder.append("<p>Setor: " + idea.getSector().getName() + "</p>");
-			builder.append("<p>" + idea.getSuggestion() + "</p>");
+			builder.append("<header>");
+				builder.append("<h3>Central de Ideias</h3>");
+				builder.append("<p><strong>Nome:</strong> " + (idea.getName().equals("") ? "Anônimo" : idea.getName()) + "</p>");
+				builder.append("<p><strong>Contato:</strong> " + (idea.getContact().equals("") ? "" : idea.getContact()) + "</p>");
+				builder.append("<p><strong>Setor:</strong> " + idea.getSector().getName() + "</p>");
+				builder.append("<p><strong>Sugestão:</strong><br/>" + idea.getSuggestion() + "</p>");
+			builder.append("</header>");
 		builder.append("</body>");
 		
 		return builder.toString();

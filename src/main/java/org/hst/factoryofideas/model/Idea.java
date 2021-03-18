@@ -11,15 +11,18 @@ public class Idea implements Serializable {
 
 	private String name;
 	
+	private String contact;
+	
 	private String suggestion;
 	
 	private Sector sector;
 
+	
 	@Override
 	public String toString() {
-		return "Idea [name=" + name + ", suggestion=" + suggestion + ", sector=" + sector.toString() + "]";
+		return "Idea [name=" + name + ", contact=" + contact + ", suggestion=" + suggestion + ", sector=" + sector.toString() + "]";
 	}
-	
+
 	public Idea() {
 		
 	}
@@ -30,6 +33,14 @@ public class Idea implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getContact() {
+		return contact;
+	}
+
+	public void setContact(String contact) {
+		this.contact = contact;
 	}
 
 	public String getSuggestion() {

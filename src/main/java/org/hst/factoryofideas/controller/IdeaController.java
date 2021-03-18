@@ -39,6 +39,12 @@ public class IdeaController {
 		// Envia a idea para o serviço de envio de e-mail
 		/*ResponseEntity<?> result =*/ EmailService.sendEmail(idea);
 		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		//return result;
 	}
 	
