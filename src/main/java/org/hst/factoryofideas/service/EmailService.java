@@ -20,13 +20,14 @@ public class EmailService {
 		builder.append("<body>");
 			builder.append("<h3>Central de Ideias</h3>");
 			builder.append("<p>Nome: " + (idea.getName() != null ? idea.getName() : "Anônimo") + "</p>");
+			builder.append("<p>Setor: " + idea.getSector().getName() + "</p>");
 			builder.append("<p>" + idea.getSuggestion() + "</p>");
 		builder.append("</body>");
 		
 		return builder.toString();
 	}
 	
-	public static ResponseEntity<?> sendEmail(Idea idea) throws URISyntaxException {
+	public static void sendEmail(Idea idea) throws URISyntaxException {
 		// Formata a ideia para uma página HTML em String
 		String content = format(idea);
 
@@ -38,25 +39,18 @@ public class EmailService {
 		headers.set("Accept", "application/json");
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		
-		//JSONObject json = new JSONObject();
-		//json.put("enderecos", "paulo.ferreira@hst.org.br");
-		//json.put("title", "Central de Ideias");
-		//json.put("body", body);
-		
+		// Cria o corpo da requisição
 		Map<String, String> body = new HashMap<String, String>();
 		body.put("recipient", "paulo.ferreira@hst.org.br");
 		body.put("title", "Central de Ideias");
 		body.put("content", content);
 		
-		// Cria a requisição
-		//HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
-
 		HttpEntity<Map<String, String>> request = new HttpEntity<Map<String, String>>(body, headers);
 		
 		// Dispara a requisição e recebe o resultado
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<?> result = restTemplate.postForEntity(uri, request, ResponseEntity.class);
+		/*ResponseEntity<?> result =*/ restTemplate.postForEntity(uri, request, ResponseEntity.class);
 		
-		return result;
+		//return result;
  	}
 }

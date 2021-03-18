@@ -26,27 +26,27 @@ public class FactoryofideasApplication implements CommandLineRunner {
 		
 		// Preenche com os devidos valores
 		responsible = new ArrayList<String>();
-		responsible.add("max.grotz@hst.org.br");
+		responsible.add("paulo.ferreira@hst.org.br");
 		sector = new Sector(1, "Tecnologia da Informação", responsible);
 		sectors.add(sector);
 
 		responsible = new ArrayList<String>();
-		responsible.add("max.grotz@hst.org.br");
+		responsible.add("paulo.ferreira@hst.org.br");
 		sector = new Sector(2, "Controle de Infecção", responsible);
 		sectors.add(sector);
 		
 		responsible = new ArrayList<String>();
-		responsible.add("max.grotz@hst.org.br");
+		responsible.add("paulo.ferreira@hst.org.br");
 		sector = new Sector(3, "Nutrição", responsible);
 		sectors.add(sector);
 
 		responsible = new ArrayList<String>();
-		responsible.add("max.grotz@hst.org.br");
+		responsible.add("paulo.ferreira@hst.org.br");
 		sector = new Sector(4, "Gestão da Qualidade", responsible);
 		sectors.add(sector);
 
 		responsible = new ArrayList<String>();
-		responsible.add("max.grotz@hst.org.br");
+		responsible.add("paulo.ferreira@hst.org.br");
 		sector = new Sector(5, "Contas a Receber", responsible);
 		sectors.add(sector);
 		
