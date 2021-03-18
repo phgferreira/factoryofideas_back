@@ -30,13 +30,16 @@ public class IdeaController {
 		return sectorsWithoutResponsible;
 	}
 	
-	@PostMapping("/sendMail")
-	private ResponseEntity<?> sendMail(@RequestBody Idea idea) throws URISyntaxException {
+	@PostMapping("/sendEmail")
+	private ResponseEntity<?> sendEmail(@RequestBody Idea idea) throws URISyntaxException {
 		
+		// Carega os outros valores do setor selecionado
 		idea.setSector(SectorRepository.getSector(idea.getSector().getId()));
-		EmailService.sendEmail(idea);
 		
-		return ResponseEntity.ok(idea);
+		// Envia a idea para o serviço de envio de e-mail
+		ResponseEntity<?> result = EmailService.sendEmail(idea);
+		
+		return result;
 	}
 	
 }
