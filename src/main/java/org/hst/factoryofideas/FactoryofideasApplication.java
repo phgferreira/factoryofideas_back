@@ -114,7 +114,7 @@ public class FactoryofideasApplication implements CommandLineRunner {
 		sectors.add(new Sector(55, "Faturamento SUS", responsible));
 
 		responsible = new ArrayList<String>();
-		responsible.add("leonardo.menezes@hst.org.br");
+		responsible.add("bruna.silva@hst.org.br");
 		sectors.add(new Sector(56, "Diretoria Executiva", responsible));
 		sectors.add(new Sector(57, "Secretaria da Administração", responsible));
 		sectors.add(new Sector(58, "Transporte", responsible));

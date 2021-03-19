@@ -51,7 +51,6 @@ public class EmailService {
 		+ "<body>"
 		+ "	<header class='App-Header'>"
 		+ "	<div class='Frame'>"
-		+ "		<img src='http://10.7.0.15:43001/img/email.jpg' class='Logo' alt=''/>"
 		+ ""
 		+ "		<h3>Central de Ideias</h3>"
 		+ ""
@@ -80,7 +79,7 @@ public class EmailService {
 		
 		// Cria o corpo da requisição
 		Map<String, String> body = new HashMap<String, String>();
-		body.put("recipient", "paulo.ferreira@hst.org.br");
+		body.put("recipient", idea.getSector().getResponsible().get(0));
 		body.put("title", "Central de Ideias");
 		body.put("content", content);
 		
