@@ -29,15 +29,12 @@ public class EmailService {
 		+ "  	flex-direction: column;"
 		+ "  	align-items: center;"
 		+ "  	justify-content: center;"
-		+ "  	background-color: grey;"
 		+ "	}"
 		+ ""
 		+ "	.Frame {"
 		+ " 	margin-top: 20px;"
 		+ "  	margin-bottom: 20px;"
 		+ "  	width: 600px;"
-		+ "  	background-color: rgb(0, 68, 131);"
-		+ "  	color: white;"
 		+ "  	border-radius: 20px;"
 		+ "  	display: flex;"
 		+ "  	flex-direction: column;"
@@ -54,7 +51,7 @@ public class EmailService {
 		+ "<body>"
 		+ "	<header class='App-Header'>"
 		+ "	<div class='Frame'>"
-		+ "		<img src='http://localhost:43001/img/favicon.jpg' class='Logo' alt=''/>"
+		+ "		<img src='http://10.7.0.15:43001/img/email.jpg' class='Logo' alt=''/>"
 		+ ""
 		+ "		<h3>Central de Ideias</h3>"
 		+ ""
@@ -74,7 +71,7 @@ public class EmailService {
 		String content = format(idea);
 
 		// Endereço do microserviço
-		URI uri = new URI("http://localhost:43003/email/send");
+		URI uri = new URI("http://10.7.0.15:43003/email/send");
 		
 		// Configura o cabeçalho
 		HttpHeaders headers = new HttpHeaders();

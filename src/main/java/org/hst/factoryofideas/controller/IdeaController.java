@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://10.7.0.15:43001")
+@CrossOrigin(origins = {"http://10.7.0.15:50269", "http://localhost:50269", "http://localhost:43001"})
 @RestController
 @RequestMapping("/idea")
 public class IdeaController {
