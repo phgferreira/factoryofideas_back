@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:43001")
+@CrossOrigin(origins = "http://10.7.0.15:43001")
 @RestController
 @RequestMapping("/idea")
 public class IdeaController {
@@ -31,21 +31,15 @@ public class IdeaController {
 	}
 	
 	@PostMapping("/sendEmail")
-	private void sendEmail(@RequestBody Idea idea) throws URISyntaxException {
+	private ResponseEntity<String> sendEmail(@RequestBody Idea idea) throws URISyntaxException {
 		// Carega os outros valores do setor selecionado
 		Sector sector = SectorRepository.getSector(idea.getSector().getId());
 		idea.setSector(sector);
 		
 		// Envia a idea para o serviço de envio de e-mail
-		/*ResponseEntity<?> result =*/ EmailService.sendEmail(idea);
+		ResponseEntity<String> result = EmailService.sendEmail(idea);
 		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
-		//return result;
+		return result;
 	}
 	
 }
